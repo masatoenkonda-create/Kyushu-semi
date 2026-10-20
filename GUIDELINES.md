@@ -1,7 +1,48 @@
 # Game guidelines — one chip, a worldwide journey
 
-Updated: 20 October 2026  
-Status: evolving design specification for Claude and Codex to review before a Gemini build prompt is written. No rebuild is requested yet.
+Updated: 20 October 2026
+Status: final guidelines for the first Gemini build run. Written by Maxence with Codex and Claude.
+
+## 0. Read this first: how the build works (for Gemini)
+
+**This is an alpha prototype, not a finished game.** We do not expect a polished or complete product from your first run, or from any single run.
+
+- **Several iterations.** You will get many build runs, one after another. Each run adds or fixes a part. If something is missing, broken or ugly at the end of a run, that is OK: we fix it in the next run. Do not try to deliver everything in one go.
+- **Working beats beautiful.** A rough game that runs and can be played end to end is worth far more than a beautiful one that doesn't work. Spend your effort on things working, not on looks.
+- **Placeholders everywhere are fine.** Use plain coloured boxes, cylinders and spheres for machines and materials, text labels instead of art, and a simple coloured or outline world map instead of pixel art. Use no sound, or placeholder beeps. Use simple UI panels. Art, audio, animation and visual polish come in later iterations.
+- **Build it layer by layer, like a front-end fab.** A fab builds a chip one layer at a time, checking each layer before adding the next. Do the same: lay down a thin, working layer, check it runs, then the next run adds the next layer on top. Do not build one stage in perfect detail while the rest doesn't exist.
+- **Stubs are welcome.** A stage that isn't built yet can be a simple placeholder screen. It shows the stage name, the country, what arrives, what leaves, and a "Complete (stub)" button, clearly marked as a stub. The journey must still be walkable from start to finish through stubs.
+- **You choose priorities within a run.** If time runs short, follow the priority order below and leave the rest for later.
+
+**Priority order inside any run**
+
+1. The app builds and starts without errors.
+2. The full journey can be walked from the first point to the last on the map, using stubs where needed.
+3. The lot (cargo) keeps a consistent identity, quantity and quality state from stage to stage (§9).
+4. The stages planned for this iteration are playable, with real cause and effect.
+5. Everything else: art, sound, extra branches, polish.
+
+**Suggested iteration plan** (the next run may adjust it):
+
+| Iteration | Goal |
+|---|---|
+| 1. Skeleton | Placeholder world map with every route point from §4. Move between points. Every stage is a stub. A lot object travels and its state is shown. Facts and stage definitions live in data files, not in UI code. |
+| 2. First real stages | The first playable slice (§13): wafer making and one fab patterning cycle, with real controls and outcomes. |
+| 3. Back end and phone | Wafer test, dicing, packaging, final test, and phone integration become playable. The rest stay stubs. |
+| 4. Front of the chain and branches | Quarry, silicon metal and purification become playable. Equipment, design and component branches appear on the map. |
+| 5. Logistics and one disruption | Transfers with lot documents, arrival vs. release, and one delayed input (§8). |
+| 6+. Look and feel | Pixel-art map, nicer 3D, sound, accessibility polish, and fixes from playtests. |
+
+**At the end of every run**, update a short `BUILD_NOTES.md` at the repo root covering:
+
+- what works;
+- what is stubbed;
+- known bugs;
+- what you suggest for the next iteration.
+
+That is how the next run (yours or ours) picks up where you left off.
+
+**Keep these files when you rewrite the repo:** `GUIDELINES.md`, `SOURCES.md`, `CLAUDE_OPINION.md`, `CODEX_OPINION.md` and `UNIFIED_OPINION.md`. Replacing the old prototype code is fine.
 
 ## 1. Current direction and precedence
 
@@ -74,27 +115,50 @@ A microscopic operation is represented through a machine, schematic or magnified
 
 Use the following **working scenario geography**. It is a design choice grounded in real activities at these locations. It is not evidence of shipments between the example companies.
 
-**Main material route:** Norway → Germany → Japan → Taiwan → China mainland → a user market.
+**Design goal: the whole planet.** The chain is global, and the map must show that. No single country should hold most of the stages. Spread the work across every place where the activity really happens, but never invent an activity for a country just to add it (see the Korea rule below).
 
-**Converging information/equipment routes:** a US design activity; equipment examples from the Netherlands and Japan.
+**Main material route (playable stages):**
+
+> Norway → Germany → Japan → Taiwan → Malaysia → (Singapore hub) → India → a user market
+
+**Converging branches (they feed the main route):**
+
+- **Design data:** California, USA.
+- **Crucible quartz:** high-purity quartz from Spruce Pine, North Carolina, USA, for the crucibles used in crystal growth.
+- **Lithography equipment:** the Netherlands, fed in turn by optics from Germany and the EUV light source from San Diego, California, USA.
+- **Process equipment and materials:** Japan.
+- **Phone components:** China mainland (and other countries).
+- **Memory chips:** South Korea.
+
+**Context points** are inspectable but not playable. They show that the same activity also happens elsewhere: South Korea and Singapore wafer fabs, Vietnam assembly/test, a US (Arizona) fab, and China mainland phone assembly.
+
+That puts **12 countries** on the map: USA (three states), Norway, Germany, the Netherlands, Japan, Taiwan, Malaysia, Singapore, India, China mainland, South Korea and Vietnam.
 
 | Map region | Activity in the teaching route | Evidence and limit |
 |---|---|---|
 | Norway | Quartz/quartzite extraction and silicon-metal production | Elkem documents Norwegian mines and silicon facilities; R03. A particular mine-to-smelter shipment is not specified. |
+| USA, North Carolina (Spruce Pine) | Branch: high-purity quartz for crucibles | Widely documented as a key world source of high-purity quartz; Hurricane Helene shut the mines in 2024; R16. The crucible-maker location is not yet sourced, so show the branch going to "a crucible maker" (region unresolved). |
 | Germany, Burghausen region | Purification for electronic-grade polysilicon | WACKER documents semiconductor-grade polysilicon activity there; R04. No WACKER-to-wafer-maker contract is asserted. |
 | Japan, Imari/Saga region | Crystal growth and wafer manufacture | SUMCO process and site references; R05–R06. The stage is fictional, not a replica of that factory. |
-| United States | A short design-data branch joins the fab route | Sector-level design context; R01. It does not identify the actual designers of the fictional product. |
-| Netherlands | A lithography-equipment branch supplies the fab | ASML describes its systems and Netherlands activities; R08. Show “lithography,” without requiring EUV or a node size. |
+| USA, California | A short design-data branch joins the fab route | Sector-level design context; R01. It does not identify the actual designers of the fictional product. |
+| Netherlands (Veldhoven) | A lithography-equipment branch supplies the fab | ASML describes its systems and Netherlands activities; R08. Show "lithography", without requiring EUV or a node size. |
+| Germany (optics) and USA, San Diego (light source) | Sub-branches feeding the lithography machine | ASML's San Diego site develops the EUV light source; R17. ZEISS in Germany supplies optics; R17 (exact site to verify). Shown only as small feeder arrows into the Netherlands branch. |
 | Japan | Process equipment/material branches | TEL Kyushu's documented equipment role is one example; R09. Detailed chemicals need their own sources before use. |
-| Taiwan | Wafer fabrication, then assembly/test activities | Foundry and packaging/test examples; R07 and R10. Do not require an international border between stages that can happen within Taiwan. |
-| China mainland | Board/phone integration and assembly | Apple documents iPhone assembly there; R11. This does not prove the upstream fictional chip route. |
+| Taiwan | Wafer fabrication and wafer test | Foundry example; R07. Wafer test may stay at or near the fab site. |
+| Malaysia (Penang) | Die separation, packaging and final test | Penang is a major back-end (assembly/test) hub with many global firms; R18. The specific factory is fictional. |
+| Singapore | Logistics hub on the way to phone assembly (scenario), plus a context point for its wafer fabs | Singapore hosts wafer fabs (e.g. Micron, GlobalFoundries); R19. Routing this lot through Singapore is a **game assumption**: label it so. |
+| India (Tamil Nadu / Karnataka) | Board/phone integration and assembly | iPhone assembly in India is widely reported (Foxconn, Tata); R20. Apple's own page shows China mainland (R11), so China stays as an alternative assembly context point. |
+| China mainland | Branch: phone components arrive at assembly. Context point: iPhone assembly. | Apple documents iPhone assembly there; R11. Component origins are illustrative: say "components from suppliers such as in China mainland", not named contracts. |
+| South Korea | Branch: memory chips arrive at phone assembly. Context point: foundry fabs. | Korea hosts major memory makers and Samsung foundry sites; R12, R21. A memory supply link to this phone is illustrative. |
+| Vietnam | Context point: assembly/test | Intel's Ho Chi Minh City assembly/test plant is one example; R22. Not on the playable route. |
+| USA, Arizona | Context point: wafer fabs being built and run outside Asia | To source before showing; label as context only. |
 | User market | Distribution, retail/delivery, and use | Destination chosen for the story; mark it a scenario choice. |
 
-South Korea belongs on the global context map: Samsung documents foundry manufacturing locations there (R12). It can have a short inspectable context point explaining that fabrication also happens elsewhere. **Do not make this same wafer visit both Taiwan and Korea merely to collect countries.** It is not a second playable chip campaign.
+**Korea rule (applies to every country):** do not make this same wafer visit both Taiwan and Korea, or any second fab, merely to collect countries. Extra countries enter as branches, real alternative locations, or context points, never as invented steps. Korea's real role here is memory and foundry context, not a second playable chip campaign.
 
 These example countries are not exclusive owners of their activities. Exact factory pins, transport legs and any named commercial relationships need additional evidence before they are presented as real. If a detail cannot be supported, retain the broad regional example or leave it unresolved.
 
-Sources R01–R15 are defined in [SOURCES.md](SOURCES.md), with what each does and does not establish.
+Sources R01–R22 are defined in [SOURCES.md](SOURCES.md), with what each does and does not establish.
 
 ## 5. Campaign workflow
 
@@ -119,7 +183,7 @@ The operations below have source-backed foundations; their playable interactions
 
 | Stage | Setting and input → output | Proposed hands-on task | Visible check / lesson | Basis |
 |---|---|---|---|---|
-| 0. A chip starts as a design | US information branch: intended function → checked design data | Arrange a few functional blocks, connect a simple path and run a demonstration check; send data to the mask/fab branch | A design describes the device; it is not a material cargo | R01–R02; block puzzle is a game abstraction |
+| 0. A chip starts as a design | California, USA, information branch: intended function → checked design data | Arrange a few functional blocks, connect a simple path and run a demonstration check; send data to the mask/fab branch | A design describes the device; it is not a material cargo | R01–R02; block puzzle is a game abstraction |
 | 1. Obtain the raw material | Norway: quartz-bearing rock → selected mineral feed | Excavate, sort and load a batch; inspect a sample | Appearance alone cannot certify purity; sample checking supports acceptance | R03; sorting interaction is illustrative |
 | 2. Make silicon metal | Norway: mineral feed plus carbon input → silicon metal | Load a simplified furnace, adjust feed balance/energy, then observe the transformation | Silicon is obtained by processing silica; a furnace does not make finished semiconductor-grade material | R03 |
 | 3. Purify the silicon | Germany: silicon metal → electronic-grade polysilicon | Operate an enclosed model showing chemical conversion, distillation and silicon deposition; collect the acceptable output | Removing contamination takes additional processing; “more heat” is not a universal purity control | R04, R13; detailed controls remain game abstractions |
@@ -128,13 +192,13 @@ The operations below have source-backed foundations; their playable interactions
 | 6. Prepare the pattern and the fab | Converging branch: checked design + mask blank → patterning masks; fab receives equipment and supplies | Reveal how data becomes a mask, inspect it, then see a scanner/track installed in the fab | Masks carry patterns; machines and chemicals are enabling inputs, not ingredients that become silicon | R01, R08–R09, R14; mask-writing controls remain to design |
 | 7. Build the chip on the wafer | Taiwan: blank wafer + approved design/masks/materials → patterned devices and wiring | A short sequence: deposit → coat → expose → bake/develop → etch → strip/clean, with inspection feedback; show other needed operations in a short overview | Reveal a before/after cross-section. Repeat selected representative cycles rather than pretending one loop is the complete fab flow | R02, R07–R08 |
 | 8. Test the wafer | Taiwan: processed wafer → wafer and good/bad die map | Position the wafer in a test setup, run the test, inspect the map and preserve the result | Tests identify device outcomes; they do not repair defects or randomly change them on a rerun | R02, R10 |
-| 9. Separate the dies | Taiwan: mapped wafer → individual dies with retained identity | Mount the wafer, align the cutting path and separate dies; show thinning only if the selected package flow needs it | Cutting can damage a good die; preserve the association with its test result | R02, R10; tooling detail to source |
-| 10. Package the chip | Taiwan: good die + compatible carrier/package materials → electrically connected, protected chip | Attach the die to a carrier, form wire connections and add protective resin in an illustrative package | Distinguish die, package and circuit board. Do not mix several alternative package families | R10, R15; package-specific details remain to verify |
-| 11. Final test and release | Taiwan: packaged units → accepted units ready for shipment | Test, separate accepted/rejected units, pack and label the released lot | Packaging can introduce problems; passing arrival inspection is not the same as final product release | R02, R10; release workflow is a game model |
-| 12. Put the chip into the phone | China mainland: released chip + board and other supplied components → working phone | Place the package on its board, show a simplified electrical attachment, connect the board and remaining modules, then close/test the phone | Other components converge here; our chip does not perform every function in the phone | R02, R11; board/attachment detail to source |
+| 9. Separate the dies | Malaysia: mapped wafer (shipped from Taiwan with its die map) → individual dies with retained identity | Mount the wafer, align the cutting path and separate dies; show thinning only if the selected package flow needs it | Cutting can damage a good die; preserve the association with its test result | R02, R18; tooling detail to source |
+| 10. Package the chip | Malaysia: good die + compatible carrier/package materials → electrically connected, protected chip | Attach the die to a carrier, form wire connections and add protective resin in an illustrative package | Distinguish die, package and circuit board. Do not mix several alternative package families | R18, R15; package-specific details remain to verify |
+| 11. Final test and release | Malaysia: packaged units → accepted units ready for shipment | Test, separate accepted/rejected units, pack and label the released lot | Packaging can introduce problems; passing arrival inspection is not the same as final product release | R02, R18; release workflow is a game model |
+| 12. Put the chip into the phone | India (after a Singapore hub leg, a game assumption): released chip + board, memory from South Korea and other components from China mainland → working phone | Place the package on its board, show a simplified electrical attachment, connect the board and remaining modules, then close/test the phone | Other components converge here; our chip does not perform every function in the phone | R02, R11, R20–R21; board/attachment detail to source |
 | 13. Deliver and use | User market: finished phones → someone using one | Pack, follow a brief distribution leg, unbox, power on and perform a simple action | Complete the journey from industrial input to everyday use | Scenario choice; iPhone is the familiar endpoint, not a verified product genealogy |
 
-Stages 4–5 and 8–11 may be grouped into shared locations or workspaces. They are learning beats, not a requirement for thirteen elaborate mini-games. No additional border is invented when the same site can do multiple operations.
+Stages 4–5 and 9–11 may be grouped into shared locations or workspaces. The Taiwan → Malaysia handoff after wafer test is a real kind of move (wafers often travel to a separate back-end site), and it becomes one of the logistics legs. They are learning beats, not a requirement for thirteen elaborate mini-games. No additional border is invented when the same site can do multiple operations.
 
 The final action can be opening an app or interacting with the phone. It should not imply we manufactured a camera sensor unless that is a later, explicit change of scope.
 
@@ -234,7 +298,7 @@ The existing prototype may otherwise remain Japan-themed until the rebuild. Its 
 
 Build a small **international** slice before implementing the entire campaign:
 
-1. A world map with Japan → Taiwan and an equipment connection from the Netherlands.
+1. A world map showing **all** route points and branches from §4 (most as stubs), with Japan → Taiwan playable and an equipment connection from the Netherlands.
 2. Japan wafer-making workspace: grow/slice/polish/inspect in a reduced sequence.
 3. One transfer with a lot identity and preserved quality state.
 4. Taiwan fabrication workspace: a representative pattern-transfer cycle and a magnified result.
@@ -258,6 +322,8 @@ Before the Gemini build prompt is finalized:
 Retained from Claude: material transformations, physical tools, cargo continuity, supporting branches, meaningful checks, optional learning cards, and save/retry.
 
 Changed: worldwide campaign replaces Kyushu priority; one generic chip replaces the image-sensor/processor choice; simplified fabrication replaces sensor-specific stacking; international slice replaces the Kyushu slice; evidence-backed location examples replace speculative location lists; source-supported claims replace unsourced “fact” tags.
+
+Final pass (Claude, at Maxence's request): added §0 for Gemini (alpha prototype, placeholders, iterative layer-by-layer build, priority order, BUILD_NOTES.md). Spread the route across 12 countries: back end moved to Malaysia, phone assembly to India with China and Korea branches, a Singapore hub leg, US branches (California design, North Carolina crucible quartz, San Diego light source), German optics, and Vietnam/Korea/Singapore/Arizona context points. New sources R16–R22 are in SOURCES.md.
 
 Deferred: extra chip types, node sizes, specialty sensor processes, mandatory chemical side quests, elaborate vehicles, detailed customs law and historical-event campaigns.
 
