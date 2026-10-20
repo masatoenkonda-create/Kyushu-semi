@@ -54,7 +54,7 @@ The manufacturing story must still be internally consistent: use one simplified 
 
 This worldwide direction supersedes the earlier Kyushu camera-sensor proposal, the “Kyushu Eye” product, the stacked pixel/logic wafer campaign, and the Kyushu-only first playable slice. Japan remains an important part of the network, not its center by default. The repository name is historical; it does not constrain the setting.
 
-Preserve the original prototype and these independent review records as historical guidance:
+The original prototype code may be replaced by the rebuild (it stays in Git history). Keep these independent review records as historical guidance:
 
 - [Claude opinion](CLAUDE_OPINION.md)
 - [Codex opinion](CODEX_OPINION.md)
