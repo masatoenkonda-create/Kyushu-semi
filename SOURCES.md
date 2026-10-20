@@ -1,7 +1,15 @@
 # Evidence register — worldwide chip journey
 
 Checked: 20 October 2026  
-Purpose: support the high-level route in [GUIDELINES.md](GUIDELINES.md). These sources were opened and read for the claims described below. This is an initial evidence register, not a completed manufacturing specification.
+Purpose: support the high-level route in [GUIDELINES.md](GUIDELINES.md). Records distinguish checked primary pages from research leads. This is an evidence register, not a list of features to implement.
+
+## Active build scope
+
+The final prototype has exactly one road and seven stops: **Norway → Germany → Japan → Taiwan → Malaysia → China mainland → User**. Follow GUIDELINES.md for the actual stage list and first-run instructions.
+
+Only R01–R08, R11, R13–R15 and R18 are needed for that compact route. Other records are retained for research, not instructions to add branches, suppliers, countries or context points. Source ID numbers are stable reference identifiers, not stage numbers.
+
+The first run is a labeled skeleton. The research backlog below does not block that run: omit unsupported detail or leave the associated interaction explicitly placeholder. Do not silently invent missing industrial specifications.
 
 ## Read this before using the route
 
@@ -35,7 +43,7 @@ Do not mark a claim “fact” merely because it sounds familiar. Store the supp
 **Sources:** [Norway facilities](https://www.elkem.com/about-elkem/worldwide-presence/norway/); [From quartz to silicon to silicones](https://magazine.elkem.com/is/material-science-insights/from-quartz-to-silicon-to-silicones/).  
 **Locator:** Tana/quartzite and Salten/Thamshavn entries; article section “From quartz to silicon.”  
 **Supported:** Elkem lists quartzite extraction and silicon production in Norway. Its process explanation describes quartz plus carbon-containing feed in a furnace producing metallurgical-grade silicon.  
-**Use:** Norway is a defensible illustrative setting for the first two stages.  
+**Use:** Norway is a defensible illustrative setting for the combined raw-material/smelting stage.  
 **Limit:** do not mix ferrosilicon with silicon metal. The article subsequently follows a silicone-polymer route; that later route is not the chip route. No specific Norwegian shipment to WACKER is established. Sorting rocks by appearance is only a game interaction, not a purity assay.
 
 ## R04 — Semiconductor-grade polysilicon in Germany
@@ -53,7 +61,7 @@ Do not mark a claim “fact” merely because it sounds familiar. Store the supp
 **Source:** [Production Processes](https://www.sumcosi.com/english/products/process/).  
 **Locator:** monocrystalline pulling and wafer-forming sections.  
 **Supported:** high-quality polysilicon is used for crystal growth; the described route includes slicing, surface finishing, polishing, cleaning and inspection.  
-**Use:** stages 4–5 and the distinction between polysilicon, an ingot and a finished wafer.  
+**Use:** the wafer-making stage and the distinction between polysilicon, an ingot and a finished wafer.  
 **Limit:** the campaign compresses many operations. Do not copy a temperature or dimension into the game as a universal recipe.
 
 ## R06 — Wafer-manufacturing location example
@@ -146,9 +154,9 @@ Do not mark a claim “fact” merely because it sounds familiar. Store the supp
 **Use:** a simple die/carrier/connections/protection model instead of mixing ceramic, molded and flip-chip constructions.  
 **Limit:** not a claim that this is an actual iPhone package or that ABF is required. Before implementation, choose a consistent educational construction and compatible board attachment; on screen it can remain simply “chip.”
 
-## Added in Claude's final pass (20 October 2026)
+## Additional research records — not additional build scope
 
-These records come from search results read today. Most are news reports or company pages. They support the *activity in that region*, not any link to the fictional chip. Upgrade each to a primary source before the game teaches it as source-supported.
+Only R18 below is used by the compact prototype. R16–R17 and R19–R22 are retained as deferred research: do not implement their old branches, context points or proposed locations. Several are search/news leads requiring primary-source verification. R18 was upgraded to a checked manufacturer source in the final Codex review.
 
 ## R16 — High-purity quartz, Spruce Pine, North Carolina, USA
 
@@ -166,13 +174,14 @@ These records come from search results read today. Most are news reports or comp
 **Use:** small feeder arrows into the Netherlands lithography branch.
 **Limit:** ZEISS (Germany) as the optics partner is widely known, but no ZEISS page was read in this pass, and the site is to verify. The generic chip does not need EUV; this branch illustrates where a lithography tool's parts come from.
 
-## R18 — Back-end (assembly/test) hub, Penang, Malaysia
+## R18 — Packaging and test in Penang, Malaysia
 
-**Publisher/date:** InvestPenang (Penang state investment agency), undated sector page citing SEMI.
-**Source:** [InvestPenang, Electrical & Electronics](https://investpenang.gov.my/electrical-electronics).
-**Supported:** Penang is a major semiconductor back-end hub hosting many international firms. The agency cites a share of global back-end output of about 8%, from SEMI and possibly dated.
-**Use:** Malaysia as the setting for dicing, packaging and final test.
-**Limit:** don't show a percentage in the game. The factory is fictional. The Taiwan → Malaysia handoff is a scenario edge, not a documented shipment.
+**Publisher/date:** ASE, 18 February 2025; InvestPenang, undated sector page.  
+**Sources:** [ASE launches its fifth Penang plant](https://ase.aseglobal.com/press-room/asem-launch-p5/); [InvestPenang, Electrical & Electronics](https://investpenang.gov.my/electrical-electronics/).  
+**Locator:** ASE announcement opening paragraphs; state agency's semiconductor industry overview.  
+**Supported:** ASE describes packaging and testing facilities in Bayan Lepas, Penang. The state investment agency describes the regional semiconductor ecosystem.  
+**Use:** Malaysia is an evidenced setting for the compact back-end workspace.  
+**Limit:** no shipment from this fictional Taiwan fab, Apple contract or exact package/process is established. Die separation and assembly details remain teaching abstractions requiring an internally consistent model; do not infer every operation at a named ASE factory.
 
 ## R19 — Singapore wafer fabs; Singapore as a hub
 
@@ -216,7 +225,7 @@ The source notes remain useful research leads for Japanese company roles. They w
 
 The old generated PNG is withdrawn. Its artwork is not evidence, even when it was made from useful source notes. Prior versions remain available in Git history.
 
-## Research remaining before the build prompt
+## Detail research for later playable stages
 
 1. Confirm the compact fabrication model: show representative patterning plus device/wiring formation without suggesting a single etch loop creates a working chip.
 2. Confirm the chosen package, die-separation order, wafer test and package test details from suitable manufacturer process references.
@@ -225,6 +234,6 @@ The old generated PNG is withdrawn. Its artwork is not evidence, even when it wa
 5. If logistics is interactive, research this cargo's packaging, condition limits and route. Avoid generic customs/legal requirements.
 6. Review each scenario edge. Unsupported transactions stay explicitly fictional; do not substitute a world trade chart for customer/supplier evidence.
 7. Validate all parameter-to-outcome relationships. Toy ranges are acceptable when labeled; unsupported precision is not.
-8. Approve the graph and source references before new map artwork is commissioned.
+8. The seven-stop graph in GUIDELINES.md is the active prototype graph. New polished artwork is deferred; use a simple code-rendered map for the skeleton.
 
 Current conclusion: enough evidence exists to plan the broad worldwide route. The production graph, package implementation, parameter model and exact commercial itinerary are not all verified, and the last is intentionally fictional for this prototype.
