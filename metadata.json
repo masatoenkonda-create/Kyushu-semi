@@ -1,0 +1,6 @@
+{
+  "name": "Kyushu Silicon Craft - Semiconductor Supply Chain Simulator",
+  "description": "A cozy isometric 3D simulation game exploring Japan's end-to-end semiconductor manufacturing supply chain, from raw silicon wafers to advanced packaged chips.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
