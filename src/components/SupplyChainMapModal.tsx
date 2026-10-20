@@ -55,7 +55,7 @@ export const SupplyChainMapModal: React.FC<SupplyChainMapModalProps> = ({
                   activeTab === 'map' ? 'bg-white shadow-sm text-stone-900 font-bold' : 'text-stone-600 hover:text-stone-900'
                 }`}
               >
-                Workflow & Infographic
+                Workflow
               </button>
               <button
                 onClick={() => {
@@ -99,7 +99,7 @@ export const SupplyChainMapModal: React.FC<SupplyChainMapModalProps> = ({
             onClick={() => setActiveTab('map')}
             className={`px-2 py-1 rounded ${activeTab === 'map' ? 'bg-white font-bold text-stone-900 shadow-sm' : 'text-stone-600'}`}
           >
-            Infographic
+            Workflow
           </button>
           <button
             onClick={() => setActiveTab('kyushu')}
@@ -117,21 +117,9 @@ export const SupplyChainMapModal: React.FC<SupplyChainMapModalProps> = ({
 
         {/* Modal Body */}
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
-          {/* TAB 1: WORKFLOW & INFOGRAPHIC */}
+          {/* TAB 1: WORKFLOW */}
           {activeTab === 'map' && (
             <div className="space-y-6">
-              {/* Reference Infographic Image Container */}
-              <div className="bg-stone-900 rounded-2xl overflow-hidden shadow-lg border border-stone-800 relative group">
-                <div className="absolute top-3 left-3 z-10 px-2.5 py-1 bg-stone-900/90 text-stone-200 text-[11px] font-mono rounded-lg backdrop-blur-sm border border-stone-700">
-                  Original Reference Infographic
-                </div>
-                <img
-                  src="/assets/aistudio/japan-supply-chain-map-v2_a7109ee3.png"
-                  alt="Japan Semiconductor Supply Chain Infographic"
-                  className="w-full h-auto object-contain max-h-[500px] mx-auto select-none"
-                />
-              </div>
-
               {/* 5-Stage Interactive Explorer */}
               <div>
                 <h3 className="text-sm font-bold uppercase tracking-wider text-stone-500 mb-3">
