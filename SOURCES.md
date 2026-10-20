@@ -146,6 +146,65 @@ Do not mark a claim “fact” merely because it sounds familiar. Store the supp
 **Use:** a simple die/carrier/connections/protection model instead of mixing ceramic, molded and flip-chip constructions.  
 **Limit:** not a claim that this is an actual iPhone package or that ABF is required. Before implementation, choose a consistent educational construction and compatible board attachment; on screen it can remain simply “chip.”
 
+## Added in Claude's final pass (20 October 2026)
+
+These records come from search results read today. Most are news reports or company pages. They support the *activity in that region*, not any link to the fictional chip. Upgrade each to a primary source before the game teaches it as source-supported.
+
+## R16 — High-purity quartz, Spruce Pine, North Carolina, USA
+
+**Publisher/date:** Associated Press via ABC News, Oct 2024; TechInsights commentary, Oct 2024.
+**Sources:** [ABC News / AP](https://abcnews.go.com/US/wireStory/north-carolina-town-produces-quartz-needed-tech-products-114411372); [TechInsights](https://techinsights.com/ko/node/58604).
+**Supported:** Sibelco and The Quartz Corp produce high-purity quartz at Spruce Pine. Operations were halted by Hurricane Helene (Sept 2024). The quartz is used in semiconductor manufacturing, notably crucibles.
+**Use:** a US branch feeding crucibles to the crystal-growth stage. Helene is a candidate real disruption event.
+**Limit:** the "almost all the world's supply" wording is strong; don't quote a share. The crucible maker and its location are not sourced.
+
+## R17 — Lithography sub-suppliers: San Diego light source, German optics
+
+**Publisher/date:** ASML, undated San Diego location page; ASML press release, 2012 (Cymer acquisition).
+**Sources:** [ASML San Diego](https://www.asml.com/company/about-asml/locations/san-diego); [ASML to acquire Cymer](https://www.asml.com/news/press-releases/2012/asml-to-acquire-cymer-to-accelerate-development-of-euv-technology).
+**Supported:** ASML's San Diego team designs, develops and qualifies the EUV light source.
+**Use:** small feeder arrows into the Netherlands lithography branch.
+**Limit:** ZEISS (Germany) as the optics partner is widely known, but no ZEISS page was read in this pass, and the site is to verify. The generic chip does not need EUV; this branch illustrates where a lithography tool's parts come from.
+
+## R18 — Back-end (assembly/test) hub, Penang, Malaysia
+
+**Publisher/date:** InvestPenang (Penang state investment agency), undated sector page citing SEMI.
+**Source:** [InvestPenang, Electrical & Electronics](https://investpenang.gov.my/electrical-electronics).
+**Supported:** Penang is a major semiconductor back-end hub hosting many international firms. The agency cites a share of global back-end output of about 8%, from SEMI and possibly dated.
+**Use:** Malaysia as the setting for dicing, packaging and final test.
+**Limit:** don't show a percentage in the game. The factory is fictional. The Taiwan → Malaysia handoff is a scenario edge, not a documented shipment.
+
+## R19 — Singapore wafer fabs; Singapore as a hub
+
+**Publisher/date:** Singapore Economic Development Board (EDB), news on Micron's new fab; TrendForce, Jan 2024.
+**Sources:** [EDB, Micron breaks ground](https://www.edb.gov.sg/en/news-and-insights/micron-breaks-ground-on-advanced-wafer-fab-in-singapore); [TrendForce, Singapore foundry landscape](https://www.trendforce.com/news/2024/01/11/news-explore-the-foundry-landscape-in-singapore-as-umcs-plant-nears-completion-mid-year/).
+**Supported:** Singapore hosts wafer fabs (Micron, GlobalFoundries, UMC and others).
+**Use:** a context point for "fabs elsewhere". The routing of the lot through a Singapore logistics hub is a **game assumption** and must be labelled so.
+**Limit:** no source here establishes Singapore transshipment for this cargo. Add a port/airport source if the hub leg becomes interactive.
+
+## R20 — iPhone assembly in India
+
+**Publisher/date:** news reports 2025–2026 (e.g. Seeking Alpha/Reuters-based coverage of Tata's Hosur plant and Foxconn's Bengaluru plant).
+**Source:** [Seeking Alpha, Tata and Foxconn plants in India](https://seekingalpha.com/news/4436966-apples-iphone-production-starts-at-new-tata-plant-foxconn-facility-close-behind-in-india).
+**Supported (reported):** iPhones are assembled in India by Foxconn and Tata Electronics (Tamil Nadu, Karnataka).
+**Use:** India as the phone-assembly stage; China mainland stays as an alternative context point (R11).
+**Limit:** reported, not an Apple primary page. Before the game calls it source-supported, find an Apple statement (e.g. an earnings-call transcript). Shares of production vary by source; don't show one.
+
+## R21 — Memory makers in South Korea
+
+**Publisher/date:** to add (Samsung and SK hynix corporate site pages).
+**Supported:** *to be sourced*. South Korea is home to major memory chip makers.
+**Use:** a memory-chip branch arriving at phone assembly, as a generic component.
+**Limit:** the specific memory supplier of any iPhone model is not sourced and must not be named as such. Status: **unverified** until a corporate page is added.
+
+## R22 — Assembly/test in Vietnam
+
+**Publisher/date:** VentureBeat / InfoWorld, 2010; Vietnam News (bizhub), later.
+**Sources:** [VentureBeat, Intel opens $1B assembly factory in Vietnam](https://venturebeat.com/business/intel-opens-a-1b-chip-assembly-factory-in-vietnam); [bizhub, Intel invests additional $475M](https://bizhub.vietnamnews.vn/intel-invest-an-additional-475-million-into-vn-post321948.html).
+**Supported:** Intel runs a large assembly/test plant in Saigon Hi-Tech Park, Ho Chi Minh City.
+**Use:** a Vietnam context point showing that assembly/test also happens there.
+**Limit:** older sources. Check current status before showing details. Not on the playable route.
+
 ## Historical Japan resources
 
 Keep these records:
